@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | Agrosuna</title>
+  <meta name="description" content="Catálogo de repuestos para tractores y maquinaria agrícola de Agrosuna, Laguna Blanca, Formosa.">
+  <meta name="theme-color" content="#1C2B25">
+  <link rel="icon" href="../assets/marca/isotipo-verde.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../compartido/fuentes.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="productos">
+  <script src="../compartido/iconos.js"></script>
+  <header class="cabecera" id="cabecera"></header>
+
+  <main class="contenedor">
+    <nav class="migas" aria-label="Estás en">
+      <a href="index.html">Inicio</a>
+      <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      <span data-miga>Productos</span>
+    </nav>
+
+    <div class="listado">
+      <aside class="filtros" aria-label="Filtros">
+        <details data-filtros>
+        <summary>Filtrar productos</summary>
+        <h2>Categorías</h2>
+        <ul class="filtros__categorias" data-lista-categorias></ul>
+
+        <h2>Tipo de repuesto</h2>
+        <label class="casilla"><input type="checkbox" data-tipo value="Original"> Original</label>
+        <label class="casilla"><input type="checkbox" data-tipo value="Alternativo"> Alternativo</label>
+        <label class="casilla"><input type="checkbox" data-tipo value="Fabricación propia"> Fabricación propia</label>
+
+        <h2><label for="marca">Marca de la máquina</label></h2>
+        <select id="marca" data-marca></select>
+        </details>
+      </aside>
+
+      <div>
+        <div class="listado__cabecera">
+          <h1 data-titulo>Todos los productos</h1>
+          <div class="listado__orden">
+            <span data-cuenta aria-live="polite"></span>
+            <label for="orden" class="oculto">Ordenar por</label>
+            <select id="orden" data-orden>
+              <option value="destacados">Ordenar: destacados</option>
+              <option value="menor">Menor precio</option>
+              <option value="mayor">Mayor precio</option>
+              <option value="nombre">Nombre (A a Z)</option>
+            </select>
+          </div>
+        </div>
+        <p class="aviso-muestra" data-aviso-muestra hidden>Tienda de muestra: los productos, precios y fotos son ejemplos hasta cargar el catálogo real.</p>
+
+        <ul class="productos productos--tres" data-productos></ul>
+
+        <div class="vacio" data-vacio hidden>
+          <h2>No encontramos productos con esa búsqueda</h2>
+          <p>Probá con otra palabra o quitá algún filtro. En el local tenemos más stock del publicado: si nos escribís, lo buscamos.</p>
+          <a class="boton boton--whatsapp" data-vacio-wa target="_blank" rel="noopener" href="#"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie" id="pie"></footer>
+
+  <script src="../compartido/datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

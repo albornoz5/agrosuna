@@ -1,0 +1,12 @@
+/* Inter — tipografía de la identidad visual de Agrosuna (subconjunto latino, WOFF2) */
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal; font-display: swap; src: url("../assets/fuentes/inter-regular.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal; font-display: swap; src: url("../assets/fuentes/inter-medium.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-style: normal; font-display: swap; src: url("../assets/fuentes/inter-semibold.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 700; font-style: normal; font-display: swap; src: url("../assets/fuentes/inter-bold.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 800; font-style: normal; font-display: swap; src: url("../assets/fuentes/inter-extrabold.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 900; font-style: normal; font-display: swap; src: url("../assets/fuentes/inter-black.woff2") format("woff2"); }
+
+/* Barlow Condensed — títulos de las versiones clásicas (licencia SIL Open Font) */
+@font-face { font-family: "Barlow Condensed"; font-weight: 500; font-style: normal; font-display: swap; src: url("../assets/fuentes/barlow-condensed-500.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-style: normal; font-display: swap; src: url("../assets/fuentes/barlow-condensed-600.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-style: normal; font-display: swap; src: url("../assets/fuentes/barlow-condensed-700.woff2") format("woff2"); }

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito | Agrosuna</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1C2B25">
+  <link rel="icon" href="../assets/marca/isotipo-verde.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../compartido/fuentes.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="carrito">
+  <script src="../compartido/iconos.js"></script>
+  <header class="cabecera" id="cabecera"></header>
+
+  <main class="contenedor">
+    <nav class="migas" aria-label="Estás en">
+      <a href="index.html">Inicio</a>
+      <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      <span>Carrito</span>
+    </nav>
+
+    <h1 class="pagina__titulo">Carrito de compras</h1>
+
+    <div class="vacio" data-carrito-vacio hidden>
+      <h2>Tu carrito está vacío</h2>
+      <p>Buscá los repuestos que necesitás y agregalos para armar tu pedido.</p>
+      <a class="boton boton--oscuro" href="productos.html">Ver productos</a>
+    </div>
+
+    <div class="compra" data-carrito-lleno hidden>
+      <div>
+        <table class="tabla">
+          <thead>
+            <tr><th scope="col">Producto</th><th scope="col">Precio</th><th scope="col">Cantidad</th><th scope="col">Subtotal</th><th scope="col"><span class="oculto">Quitar</span></th></tr>
+          </thead>
+          <tbody data-renglones></tbody>
+        </table>
+        <a class="compra__seguir" href="productos.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Seguir comprando</a>
+      </div>
+
+      <form class="resumen" data-pedido>
+        <h2>Resumen del pedido</h2>
+        <dl>
+          <div><dt>Subtotal</dt><dd data-subtotal></dd></div>
+          <div><dt>Envío</dt><dd>A coordinar</dd></div>
+          <div class="resumen__total"><dt>Total</dt><dd data-total></dd></div>
+        </dl>
+        <p class="resumen__nota" data-a-cotizar hidden></p>
+
+        <h2>Tus datos</h2>
+        <div class="campo">
+          <label for="c-nombre">Nombre y apellido</label>
+          <input id="c-nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="c-telefono">Teléfono</label>
+          <input id="c-telefono" name="telefono" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="campo">
+          <label for="c-localidad">Localidad</label>
+          <input id="c-localidad" name="localidad" type="text" autocomplete="address-level2">
+        </div>
+        <fieldset class="campo">
+          <legend>Entrega</legend>
+          <label class="casilla"><input type="radio" name="entrega" value="Retiro en el local" checked> Retiro en el local</label>
+          <label class="casilla"><input type="radio" name="entrega" value="Envío a coordinar"> Envío a coordinar</label>
+        </fieldset>
+        <div class="campo">
+          <label for="c-pago">Forma de pago</label>
+          <select id="c-pago" name="pago">
+            <option>A convenir</option>
+            <option>Efectivo</option>
+            <option>Transferencia bancaria</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="c-comentario">Comentario (opcional)</label>
+          <textarea id="c-comentario" name="comentario" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="boton boton--whatsapp boton--grande"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>Finalizar pedido por WhatsApp</button>
+        <p class="resumen__nota">Al finalizar se abre WhatsApp con tu pedido listo para enviar. Te confirmamos stock, pago y entrega por ese medio.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pie" id="pie"></footer>
+
+  <script src="../compartido/datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

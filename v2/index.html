@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agrosuna Servicios Agropecuarios — Recorré el taller. Laguna Blanca, Formosa</title>
+  <meta name="description" content="Recorré los sectores de Agrosuna: repuestos, mecánica pesada, tornería, hidráulica, lubricentro y fabricación de implementos. Laguna Blanca, Formosa. Desde 2001.">
+  <meta name="theme-color" content="#1C2B25">
+  <link rel="icon" href="../assets/marca/isotipo-verde.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fuentes/inter-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../compartido/fuentes.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <svg width="0" height="0" hidden>
+    <symbol id="ico-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  </svg>
+
+  <a class="saltar" href="#repuestos">Ir al primer sector</a>
+
+  <aside class="riel" aria-label="Recorrido del taller">
+    <a class="riel__logo" href="#inicio" aria-label="Agrosuna Servicios Agropecuarios, inicio">
+      <img src="../assets/marca/logo-secundario-blanco.svg" alt="" width="196" height="36">
+    </a>
+
+    <nav class="riel__nav" aria-label="Sectores">
+      <ol class="paradas">
+        <li><a href="#repuestos">Repuestos</a></li>
+        <li><a href="#mecanica">Mecánica pesada</a></li>
+        <li><a href="#torneria">Tornería</a></li>
+        <li><a href="#hidraulica">Hidráulica</a></li>
+        <li><a href="#lubricentro">Lubricentro</a></li>
+        <li><a href="#fabricacion">Herrería y fabricación</a></li>
+        <li><a href="#chapa">Chapa y pintura</a></li>
+      </ol>
+      <ul class="paradas paradas--fuera">
+        <li><a href="#campo">Asistencia a campo</a></li>
+        <li><a href="#llegada">Dónde estamos</a></li>
+      </ul>
+    </nav>
+
+    <div class="riel__pie">
+      <p class="estado" data-estado></p>
+      <a class="boton boton--verde" data-wa><svg aria-hidden="true"><use href="#ico-wa"/></svg>Escribir por WhatsApp</a>
+      <button type="button" class="boton boton--borde" data-abrir-carrito>Tu pedido <span class="cuenta" data-carrito-cuenta hidden>0</span></button>
+    </div>
+  </aside>
+
+  <div class="engranaje" aria-hidden="true"></div>
+
+  <main class="contenido" id="inicio">
+    <section class="portada">
+      <h1>Pasá, te mostramos el taller</h1>
+      <p class="portada__bajada">A cada cliente nuevo le mostramos las instalaciones, del mostrador de repuestos al torno. Acá podés hacer la misma recorrida antes de venir.</p>
+      <div class="portada__acciones">
+        <a class="boton boton--verde" href="#repuestos">Empezar el recorrido</a>
+        <a class="enlace" href="#catalogo">Ir directo al catálogo de repuestos</a>
+      </div>
+      <p class="portada__lugar">Ruta Nacional N.º 86, km 1346,5. Laguna Blanca, Formosa.</p>
+    </section>
+
+    <section class="sector" id="repuestos" data-parada aria-labelledby="t-repuestos">
+      <p class="sector__numero" aria-hidden="true">1</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-repuestos">Repuestos</h2>
+        <p class="sector__texto">La recorrida empieza en el mostrador. Repuestos originales y alternativos para tractores y maquinaria pesada, y los lubricantes Shell, de los que somos distribuidores oficiales.</p>
+
+        <h3 class="sector__subtitulo">Marcas con las que trabajamos</h3>
+        <p class="sector__ayuda">Tocá una marca para ver sus repuestos en el catálogo.</p>
+        <ul class="marcas" data-marcas></ul>
+      </div>
+    </section>
+
+    <section class="catalogo" id="catalogo" aria-labelledby="t-catalogo">
+      <div class="catalogo__encabezado">
+        <h2 id="t-catalogo">Catálogo</h2>
+        <p class="catalogo__cuenta" data-resultados aria-live="polite"></p>
+      </div>
+      <p class="aviso-muestra" data-aviso-muestra hidden>Catálogo de muestra: los productos y precios son ejemplos hasta cargar la lista real.</p>
+
+      <div class="catalogo__controles">
+        <label class="oculto" for="buscar">Buscar un repuesto</label>
+        <input id="buscar" class="catalogo__buscar" type="search" data-buscar placeholder="Buscá por repuesto, marca o modelo" autocomplete="off">
+        <div class="filtros" data-filtros role="group" aria-label="Categorías"></div>
+        <p class="marca-activa" data-marca-activa hidden>
+          Viendo repuestos de <strong data-marca-nombre></strong>
+          <button type="button" data-quitar-marca>Quitar</button>
+        </p>
+      </div>
+
+      <ul class="productos" data-productos data-por-pagina="6"></ul>
+      <button type="button" class="boton boton--borde ver-mas" data-ver-mas hidden>Ver más repuestos</button>
+      <div class="vacio" data-vacio hidden>
+        <h3>No está en la página, pero puede estar en el mostrador</h3>
+        <p>En el local tenemos mucho más de lo que entra acá. Escribinos qué buscás y te decimos si lo tenemos, si lo conseguimos o si lo fabricamos.</p>
+        <a class="boton boton--verde" data-vacio-wa href="#llegada"><svg aria-hidden="true"><use href="#ico-wa"/></svg>Preguntar por WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="sector" id="mecanica" data-parada aria-labelledby="t-mecanica">
+      <p class="sector__numero" aria-hidden="true">2</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-mecanica">Mecánica pesada</h2>
+        <p class="sector__texto">Taller especializado en tractores y maquinaria pesada. Se trabaja con turno y con los repuestos a mano, en el mismo lugar.</p>
+        <ul class="sector__lista">
+          <li>Taller especializado en tractores</li>
+          <li>Repuestos originales y alternativos en el mismo lugar</li>
+          <li>Trabajos programados con turno</li>
+        </ul>
+        <a class="enlace" data-wa="Hola Agrosuna, quiero pedir turno para mecánica pesada.">Pedir turno para el taller</a>
+      </div>
+      <img class="sector__foto" src="../assets/fotos/motor-manos-m.webp" alt="Mecánico trabajando sobre un motor" width="900" height="675" loading="lazy">
+    </section>
+
+    <section class="sector" id="torneria" data-parada aria-labelledby="t-torneria">
+      <p class="sector__numero" aria-hidden="true">3</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-torneria">Tornería</h2>
+        <p class="sector__texto">Fabricamos y reparamos piezas a medida a partir de la pieza rota, un plano o una medida. Trabajamos hierro, grilón, poliamida y bronce.</p>
+        <ul class="sector__lista">
+          <li>Maquinado de precisión y diseño de piezas</li>
+          <li>Roscas en todos los pasos, milimétricos y en pulgadas</li>
+          <li>Pernos, bujes y puntas de eje</li>
+        </ul>
+        <a class="enlace" data-wa="Hola Agrosuna, necesito tornear una pieza a medida.">Consultar por una pieza a medida</a>
+      </div>
+      <img class="sector__foto" src="../assets/fotos/torno-m.webp" alt="Pieza de acero en el torno" width="900" height="675" loading="lazy">
+    </section>
+
+    <section class="sector" id="hidraulica" data-parada aria-labelledby="t-hidraulica">
+      <p class="sector__numero" aria-hidden="true">4</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-hidraulica">Hidráulica</h2>
+        <p class="sector__texto">Reparamos y fabricamos cilindros hidráulicos, un trabajo que no vas a encontrar en otro taller de la zona.</p>
+        <ul class="sector__lista">
+          <li>Reparación y fabricación de cilindros</li>
+          <li>Mangueras hidráulicas armadas a medida</li>
+          <li>Bombas, conexiones, sellos y empaquetaduras</li>
+        </ul>
+        <a class="enlace" data-wa="Hola Agrosuna, tengo una consulta por hidráulica.">Consultar por hidráulica</a>
+      </div>
+      <img class="sector__foto" src="../assets/fotos/cilindro-m.webp" alt="Cilindro hidráulico con sus mangueras" width="900" height="675" loading="lazy">
+    </section>
+
+    <section class="sector" id="lubricentro" data-parada aria-labelledby="t-lubricentro">
+      <p class="sector__numero" aria-hidden="true">5</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-lubricentro">Lubricentro</h2>
+        <p class="sector__texto">Cambio de aceite y filtros con lubricantes Shell para motor, transmisión e hidráulico. También los llevás en balde para tener en el campo.</p>
+        <a class="enlace" href="#catalogo" data-categoria="Lubricantes">Ver lubricantes en el catálogo</a>
+      </div>
+      <img class="sector__foto" src="../assets/fotos/aceite-m.webp" alt="Cambio de aceite" width="900" height="675" loading="lazy">
+    </section>
+
+    <section class="sector" id="fabricacion" data-parada aria-labelledby="t-fabricacion">
+      <p class="sector__numero" aria-hidden="true">6</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-fabricacion">Herrería y fabricación</h2>
+        <p class="sector__texto">Soldaduras de todo tipo y fabricación de implementos completos para el trabajo agrícola.</p>
+        <ul class="sector__lista">
+          <li>Desmalezadoras y cuchillas</li>
+          <li>Acoplados</li>
+          <li>Tanques de agua y de combustible</li>
+          <li>Protecciones frontales y laterales para tractores</li>
+        </ul>
+        <a class="enlace" data-wa="Hola Agrosuna, quiero consultar por la fabricación de un implemento.">Consultar por un implemento</a>
+      </div>
+      <img class="sector__foto" src="../assets/fotos/soldadura-m.webp" alt="Soldador trabajando" width="900" height="675" loading="lazy">
+    </section>
+
+    <section class="sector" id="chapa" data-parada aria-labelledby="t-chapa">
+      <p class="sector__numero" aria-hidden="true">7</p>
+      <div class="sector__cuerpo">
+        <h2 id="t-chapa">Chapa y pintura</h2>
+        <p class="sector__texto">Reparación de chapa y pintura completa para tractores, implementos y maquinaria.</p>
+        <a class="enlace" data-wa="Hola Agrosuna, quiero consultar por chapa y pintura.">Consultar por chapa y pintura</a>
+      </div>
+      <img class="sector__foto" src="../assets/fotos/tractor-frente-m.webp" alt="Tractor rojo visto de frente" width="900" height="675" loading="lazy">
+    </section>
+
+    <section class="salida" id="campo" data-parada aria-labelledby="t-campo">
+      <div class="salida__texto">
+        <h2 id="t-campo">Si la máquina no puede venir, vamos nosotros</h2>
+        <p>Hacemos asistencia a campo en toda la provincia de Formosa y en zonas cercanas del Paraguay. El viaje se cobra por kilómetro y cada salida se presupuesta antes de arrancar.</p>
+        <a class="boton boton--verde" data-wa="Hola Agrosuna, necesito asistencia a campo. Estoy en: "><svg aria-hidden="true"><use href="#ico-wa"/></svg>Pedir asistencia a campo</a>
+      </div>
+      <div class="radio" role="img" aria-label="Laguna Blanca en el centro, con un radio habitual de 100 kilómetros y alcance a toda la provincia">
+        <span class="radio__anillo radio__anillo--provincia"><em>Toda la provincia</em></span>
+        <span class="radio__anillo radio__anillo--cien"><em>100 km a diario</em></span>
+        <span class="radio__centro">Laguna Blanca</span>
+      </div>
+    </section>
+
+    <section class="confianza" aria-labelledby="t-confianza">
+      <h2 id="t-confianza">Nadie se va sin una solución</h2>
+      <p>Es lo que más nos agradecen: que buscamos la vuelta hasta resolver el problema, con buen precio y en el tiempo que prometimos. La garantía de cada trabajo y de cada repuesto te la informamos junto con el presupuesto.</p>
+      <h3>Trabajamos con</h3>
+      <ul class="confianza__lista">
+        <li>Productores agropecuarios de toda la provincia</li>
+        <li>Casi todos los municipios de Formosa</li>
+        <li>Dirección de Vialidad Provincial</li>
+        <li>SPAP</li>
+        <li>Universidad Provincial de Laguna Blanca</li>
+        <li>Escuela Agrotécnica</li>
+      </ul>
+    </section>
+
+    <section class="llegada" id="llegada" data-parada aria-labelledby="t-llegada">
+      <h2 id="t-llegada">Fin del recorrido. Ahora te esperamos en el local</h2>
+
+      <div class="llegada__grilla">
+        <div class="llegada__datos">
+          <p class="llegada__direccion">Ruta Nacional N.º 86, km 1346,5<br>Laguna Blanca, Formosa</p>
+          <a class="enlace" data-mapa href="#">Cómo llegar</a>
+
+          <h3>Horarios</h3>
+          <table class="horarios">
+            <tr><th scope="row">Lunes a viernes</th><td>7:30 a 12 y 14:30 a 19</td></tr>
+            <tr><th scope="row">Sábados</th><td>7:30 a 12</td></tr>
+            <tr><th scope="row">Domingos</th><td>Cerrado</td></tr>
+          </table>
+          <p class="estado" data-estado></p>
+          <p class="nota">Fuera de horario atendemos solo urgencias de entrega de repuestos.</p>
+
+          <h3>Contacto</h3>
+          <ul class="contacto">
+            <li><a data-wa>WhatsApp 3718 417471</a></li>
+            <li><a data-tel href="#">Llamar al 3718 417471</a></li>
+            <li><a data-correo href="#">serviciosagrop.osuna@gmail.com</a></li>
+            <li><a data-instagram href="#">Instagram @agrosunaserviciosagropecuarios</a></li>
+          </ul>
+          <p class="nota">Te responden Juan Manuel, Federico o Griselda.</p>
+        </div>
+
+        <form class="presupuesto" data-presupuesto>
+          <h3>Pedí un presupuesto</h3>
+          <p>Contanos qué necesitás y te respondemos con precio y plazo.</p>
+          <div class="campo">
+            <label for="p-nombre">Nombre</label>
+            <input id="p-nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo campo--mitad">
+            <label for="p-telefono">Teléfono</label>
+            <input id="p-telefono" name="telefono" type="tel" autocomplete="tel">
+          </div>
+          <div class="campo campo--mitad">
+            <label for="p-localidad">Localidad</label>
+            <input id="p-localidad" name="localidad" type="text" autocomplete="address-level2">
+          </div>
+          <div class="campo">
+            <label for="p-maquina">Máquina (marca y modelo)</label>
+            <input id="p-maquina" name="maquina" type="text" placeholder="Massey Ferguson 290">
+          </div>
+          <div class="campo">
+            <label for="p-necesidad">Qué necesitás</label>
+            <textarea id="p-necesidad" name="necesidad" rows="4" required></textarea>
+          </div>
+          <div class="presupuesto__acciones">
+            <button type="submit" class="boton boton--verde"><svg aria-hidden="true"><use href="#ico-wa"/></svg>Enviar por WhatsApp</button>
+            <button type="button" class="boton boton--borde" data-por-correo>Enviar por correo</button>
+          </div>
+        </form>
+      </div>
+
+      <iframe class="mapa" title="Ubicación de Agrosuna en Laguna Blanca, Formosa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Agrosuna+Servicios+Agropecuarios,+Laguna+Blanca,+Formosa&z=14&output=embed"></iframe>
+
+      <footer class="pie">
+        <img src="../assets/marca/isotipo-blanco.svg" alt="" width="56" height="57">
+        <p>Agrosuna Servicios Agropecuarios. Desde 2001.</p>
+      </footer>
+    </section>
+  </main>
+
+  <a class="flotante" data-wa aria-label="Escribinos por WhatsApp"><svg aria-hidden="true"><use href="#ico-wa"/></svg></a>
+
+  <nav class="barra-movil" aria-label="Contacto rápido">
+    <a data-wa><svg aria-hidden="true"><use href="#ico-wa"/></svg>WhatsApp</a>
+    <a data-tel href="#">Llamar</a>
+    <button type="button" data-abrir-carrito>Pedido <span data-carrito-cuenta hidden>0</span></button>
+  </nav>
+
+  <dialog class="carrito" data-carrito aria-labelledby="titulo-carrito">
+    <div class="carrito__caja">
+      <header class="carrito__cabecera">
+        <h2 id="titulo-carrito">Tu pedido</h2>
+        <button type="button" data-cerrar-carrito>Cerrar</button>
+      </header>
+      <p class="carrito__vacio" data-carrito-vacio>Todavía no agregaste repuestos. Buscalos en el catálogo y sumalos acá.</p>
+      <ul class="carrito__lista" data-carrito-lista></ul>
+      <footer class="carrito__pie" data-carrito-pie hidden>
+        <p class="carrito__total"><span>Total estimado</span> <strong data-carrito-total></strong></p>
+        <a class="boton boton--verde" data-carrito-enviar href="#"><svg aria-hidden="true"><use href="#ico-wa"/></svg>Enviar pedido por WhatsApp</a>
+        <p class="nota">Te confirmamos disponibilidad, forma de pago y envío por WhatsApp.</p>
+      </footer>
+    </div>
+  </dialog>
+
+  <script src="../compartido/datos.js"></script>
+  <script src="../compartido/tienda.js"></script>
+  <script src="recorrido.js"></script>
+</body>
+</html>

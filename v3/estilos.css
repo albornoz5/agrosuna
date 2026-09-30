@@ -1,0 +1,448 @@
+/* Versión 3 — Ruta 86: cartelería de ruta. Verde pleno, tipografía enorme,
+   bordes gruesos y esquinas redondeadas como los carteles viales. */
+
+:root {
+  --verde: #97be6e;
+  --verde-claro: #e6f0da;
+  --tinta: #1c2b25;
+  --negro: #000000;
+  --blanco: #ffffff;
+  --gris: #4c5b54;
+  --borde: 3px;
+  --radio: 14px;
+  --ancho: 80rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+
+body {
+  margin: 0;
+  background: var(--blanco);
+  color: var(--tinta);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd, table { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, textarea { font: inherit; color: inherit; }
+
+h1, h2 { font-weight: 900; text-wrap: balance; }
+
+h1 {
+  font-size: clamp(3.25rem, 10.5vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  word-spacing: 0.06em;
+}
+
+h2 {
+  font-size: clamp(2.125rem, 5vw, 4.25rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+h3 { font-size: 1.125rem; font-weight: 800; line-height: 1.25; }
+
+:focus-visible { outline: var(--borde) solid var(--negro); outline-offset: 3px; }
+
+.ancho { width: min(100% - 2.5rem, var(--ancho)); margin-inline: auto; }
+
+.oculto {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.saltar {
+  position: absolute; left: 1rem; top: -4rem; z-index: 50;
+  padding: 0.6rem 1rem; background: var(--tinta); color: var(--blanco);
+}
+.saltar:focus { top: 1rem; }
+
+.nota { color: var(--gris); font-size: 0.9375rem; }
+
+.enlace { font-weight: 800; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 0.25em; }
+.enlace:hover { text-decoration-color: var(--verde); }
+
+/* ---------- Botones ---------- */
+
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  min-height: 3.5rem; padding: 0.8rem 1.5rem;
+  border: var(--borde) solid var(--tinta); border-radius: var(--radio);
+  font-size: 1.0625rem; font-weight: 800; text-decoration: none; cursor: pointer;
+}
+.boton svg { width: 1.375rem; height: 1.375rem; flex: none; }
+.boton--tinta { background: var(--tinta); color: var(--blanco); }
+.boton--tinta:hover { background: var(--negro); border-color: var(--negro); }
+.boton--borde { background: transparent; color: var(--tinta); }
+.boton--borde:hover { background: var(--tinta); color: var(--blanco); }
+.boton--chico { min-height: 2.75rem; padding: 0.4rem 1rem; font-size: 0.9375rem; }
+
+.cuenta {
+  min-width: 1.5rem; padding-inline: 0.35rem; border-radius: 1rem;
+  background: var(--verde); color: var(--tinta); font-size: 0.8125rem; text-align: center;
+}
+
+/* ---------- Portada ---------- */
+
+.portada { background: var(--verde); overflow: hidden; }
+
+.barra { display: flex; align-items: center; gap: 2rem; padding-block: 1.25rem; }
+.barra__logo img { width: 218px; height: auto; }
+.barra__nav { display: flex; gap: 1.75rem; margin-left: auto; font-size: 1rem; font-weight: 700; }
+.barra__nav a { text-decoration: none; padding-block: 0.4rem; border-bottom: var(--borde) solid transparent; }
+.barra__nav a:hover { border-bottom-color: var(--tinta); }
+
+.portada__texto { padding-block: clamp(2.5rem, 7vw, 6rem) clamp(2rem, 4vw, 3.5rem); }
+.portada__texto h1 { max-width: 11ch; }
+.portada__fila { display: flex; align-items: end; justify-content: space-between; gap: 2rem 4rem; flex-wrap: wrap; margin-top: clamp(2rem, 4vw, 3.5rem); }
+.portada__bajada { max-width: 30rem; font-size: clamp(1.125rem, 1.8vw, 1.5rem); font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; }
+.portada__acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* La ruta: el tractor llega hasta Laguna Blanca al cargar la página. */
+
+.ruta { position: relative; margin-top: clamp(5rem, 11vw, 9rem); background: var(--tinta); color: var(--blanco); }
+.ruta__asfalto {
+  height: 1.5rem;
+  background: repeating-linear-gradient(90deg, var(--blanco) 0 2.5rem, transparent 2.5rem 5rem) center / auto 4px no-repeat;
+}
+.ruta__tractor {
+  position: absolute; bottom: calc(100% - 0.35rem);
+  left: max(1.25rem, (100% - var(--ancho)) / 2);
+  width: min(100% - 2.5rem, var(--ancho));
+  pointer-events: none;
+}
+.ruta__tractor img {
+  width: clamp(8rem, 16vw, 13rem); height: auto;
+  margin-left: calc(41.66% - clamp(4rem, 8vw, 6.5rem));
+  animation: llegar 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes llegar { from { transform: translateX(-60vw); } }
+
+.ruta__pueblos { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); padding-block: 0.25rem 1.5rem; }
+.ruta__pueblos li {
+  position: relative; padding-top: 1rem;
+  text-align: center; font-size: 0.875rem; font-weight: 600; line-height: 1.25; color: #b9c7bf;
+}
+.ruta__pueblos li::before {
+  content: ""; position: absolute; left: 50%; top: 0; translate: -50% 0;
+  width: 2px; height: 0.6rem; background: #6f8379;
+}
+.ruta__pueblos .ruta__aca { color: var(--blanco); }
+.ruta__pueblos .ruta__aca::before { width: 4px; background: var(--verde); }
+.ruta__aca strong { display: block; font-size: 1.0625rem; font-weight: 900; color: var(--verde); }
+
+/* ---------- Repuestos: el muro de marcas ---------- */
+
+.repuestos { padding-block: clamp(4rem, 9vw, 8rem) clamp(2.5rem, 5vw, 4rem); }
+.repuestos h2 { max-width: 18ch; }
+.repuestos__ayuda { margin-top: 1.25rem; color: var(--gris); }
+
+.marcas { display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; margin-top: 2rem; }
+.marca {
+  padding: 0.15rem 0; background: none; border: 0; border-bottom: var(--borde) solid transparent;
+  font-size: clamp(1.5rem, 3.6vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.04em;
+  color: var(--tinta); cursor: pointer;
+}
+.marca:hover { border-bottom-color: var(--verde); }
+.marca[aria-pressed="true"] { border-bottom-color: var(--tinta); color: #5d8a2f; }
+
+.shell {
+  display: inline-block; margin-top: 2.5rem; padding: 0.9rem 1.25rem;
+  background: var(--verde); border-radius: var(--radio); font-weight: 800;
+}
+.shell a { margin-left: 0.5rem; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+
+/* ---------- Catálogo ---------- */
+
+.catalogo { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(4rem, 9vw, 8rem); }
+.catalogo__encabezado { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 2.5rem; border-top: var(--borde) solid var(--tinta); }
+.catalogo__encabezado h2 { font-size: clamp(1.75rem, 3.4vw, 2.75rem); }
+.catalogo__cuenta { color: var(--gris); font-weight: 700; }
+
+.aviso-muestra {
+  margin-top: 1rem; padding: 0.7rem 1rem;
+  background: #fff3c4; border-radius: 8px; font-size: 0.9375rem;
+}
+
+.catalogo__controles { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-block: 1.75rem; }
+.catalogo__buscar {
+  flex: 1 1 20rem; max-width: 30rem; min-height: 3.5rem; padding: 0 1.1rem;
+  background: var(--blanco); border: var(--borde) solid var(--tinta); border-radius: var(--radio); font-weight: 600;
+}
+.catalogo__buscar::placeholder { color: #75847c; font-weight: 500; }
+.filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filtro {
+  min-height: 2.75rem; padding: 0.3rem 1rem;
+  background: var(--verde-claro); border: 0; border-radius: 2rem;
+  font-size: 0.9375rem; font-weight: 700; cursor: pointer;
+}
+.filtro:hover { background: var(--verde); }
+.filtro[aria-pressed="true"] { background: var(--tinta); color: var(--blanco); }
+.marca-activa { margin-bottom: 1.5rem; }
+.marca-activa button { margin-left: 0.5rem; padding: 0; background: none; border: 0; font-weight: 700; text-decoration: underline; cursor: pointer; }
+
+.productos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.prod {
+  display: flex; flex-direction: column; gap: 1.5rem;
+  padding: 1.5rem; background: var(--blanco);
+  border: var(--borde) solid var(--tinta); border-radius: var(--radio); overflow: hidden;
+}
+.prod__foto { width: calc(100% + 3rem); height: auto; max-width: none; margin: -1.5rem -1.5rem 0; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: var(--borde) solid var(--tinta); }
+.prod__cuerpo { flex: 1; }
+.prod__tipo {
+  display: inline-block; margin-bottom: 0.9rem; padding: 0.15rem 0.7rem; border-radius: 2rem;
+  background: var(--verde-claro); font-size: 0.8125rem; font-weight: 800;
+}
+.prod[data-tipo="original"] .prod__tipo { background: var(--tinta); color: var(--blanco); }
+.prod[data-tipo="fabricacion-propia"] .prod__tipo { background: var(--verde); }
+.prod__nombre { font-size: 1.375rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; }
+.prod__detalle { margin-top: 0.5rem; color: var(--gris); font-size: 1rem; line-height: 1.4; }
+.prod__compra { display: grid; gap: 0.9rem; }
+.prod__precio { font-size: 2rem; font-weight: 900; line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.prod__precio--consultar { font-size: 1.0625rem; font-weight: 700; letter-spacing: 0; color: var(--gris); padding-block: 0.5rem; }
+.prod__agregar {
+  min-height: 3rem; padding: 0.4rem 1rem;
+  background: var(--tinta); border: var(--borde) solid var(--tinta); border-radius: 10px;
+  color: var(--blanco); font-size: 1rem; font-weight: 800; cursor: pointer;
+}
+.prod__agregar:hover { background: var(--negro); border-color: var(--negro); }
+.prod__agregar.is-agregado { background: var(--verde); border-color: var(--verde); color: var(--tinta); }
+
+.ver-mas { margin-top: 1.5rem; }
+
+.vacio { padding: clamp(1.5rem, 4vw, 3rem); background: var(--verde-claro); border-radius: var(--radio); }
+.vacio h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 900; letter-spacing: -0.035em; line-height: 1.05; }
+.vacio p { max-width: 36rem; margin-block: 1rem 1.75rem; }
+
+/* ---------- Servicios ---------- */
+
+.servicios { background: var(--tinta); color: var(--blanco); padding-block: clamp(4rem, 9vw, 8rem); }
+.servicios :focus-visible { outline-color: var(--verde); }
+.servicios__bajada { max-width: 34rem; margin-top: 1.25rem; color: #b9c7bf; }
+
+.acordeon { margin-top: clamp(2rem, 4vw, 3.5rem); border-top: var(--borde) solid var(--verde); }
+.acordeon details { border-bottom: 1px solid #3a4d45; }
+.acordeon summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.75rem, 4.6vw, 4rem); font-weight: 900; line-height: 1; letter-spacing: -0.045em;
+  cursor: pointer; list-style: none;
+}
+.acordeon summary::-webkit-details-marker { display: none; }
+.acordeon summary::after {
+  content: ""; flex: none; width: 0.5em; height: 0.5em;
+  background:
+    linear-gradient(var(--verde), var(--verde)) center / 100% 5px no-repeat,
+    linear-gradient(var(--verde), var(--verde)) center / 5px 100% no-repeat;
+  transition: rotate 0.2s ease;
+}
+.acordeon details[open] summary { color: var(--verde); }
+.acordeon details[open] summary::after { rotate: 45deg; }
+.acordeon summary:hover { color: var(--verde); }
+.acordeon__cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); gap: 1.5rem 3rem; align-items: start; padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.acordeon__cuerpo > div { display: grid; gap: 1rem; max-width: 40rem; }
+.acordeon__cuerpo img { width: 100%; height: auto; border-radius: var(--radio); }
+.acordeon__cuerpo p { font-size: 1.25rem; line-height: 1.45; color: #dbe4de; }
+.acordeon__cuerpo a { justify-self: start; color: var(--verde); font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+.acordeon__cuerpo a:hover { color: var(--blanco); }
+
+/* ---------- Asistencia a campo ---------- */
+
+.campo-seccion { background: var(--verde); padding-block: clamp(4rem, 9vw, 8rem); }
+.campo-seccion__grilla { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem 4rem; align-items: center; }
+.campo-seccion p { max-width: 28rem; margin-block: 1.5rem 2rem; font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+
+.cartel {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  background: var(--tinta); color: var(--blanco);
+  border-radius: calc(var(--radio) + 6px);
+  box-shadow: inset 0 0 0 6px var(--tinta), inset 0 0 0 9px var(--blanco);
+}
+.cartel__titulo { padding: 0.75rem 1rem 1rem; font-size: 1rem; font-weight: 700; color: var(--verde); }
+.cartel dl > div {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem;
+  padding: 0.9rem 1rem; border-top: 2px solid #4a5f56;
+}
+.cartel dt { font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 700; line-height: 1.2; }
+.cartel dd { font-size: clamp(1.5rem, 2.8vw, 2.25rem); font-weight: 900; line-height: 1; letter-spacing: -0.04em; text-align: right; white-space: nowrap; }
+
+/* ---------- Confianza ---------- */
+
+.confianza { padding-block: clamp(4rem, 9vw, 8rem); }
+.confianza__grilla { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem 4rem; align-items: start; }
+.confianza p { max-width: 32rem; margin-top: 1.5rem; color: var(--gris); }
+.confianza__lista { border-top: var(--borde) solid var(--tinta); }
+.confianza__lista li { padding-block: 0.9rem; border-bottom: 1px solid #c9d3cc; font-size: clamp(1.125rem, 2vw, 1.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+
+/* ---------- Contacto ---------- */
+
+.contacto-seccion { background: var(--verde-claro); padding-top: clamp(4rem, 9vw, 8rem); }
+.contacto-seccion .mapa { margin-top: clamp(4rem, 9vw, 8rem); border-top: var(--borde) solid var(--tinta); }
+.contacto-seccion__grilla { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem 4rem; align-items: start; }
+
+.donde { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2rem 1.75rem; align-items: start; }
+.donde h2 { font-size: clamp(1.875rem, 3.6vw, 3rem); }
+.donde__direccion { margin-block: 1rem 0.75rem; font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+.donde__bloque { grid-column: 1 / -1; }
+.donde__bloque h3 { margin-bottom: 0.6rem; }
+.donde__bloque .nota { margin-top: 0.6rem; }
+
+/* Mojón kilométrico */
+.mojon {
+  display: grid; justify-items: center; align-content: start;
+  width: 7.5rem; padding: 0.6rem 0.5rem 1.1rem;
+  background: var(--blanco); border: var(--borde) solid var(--tinta);
+  border-radius: 3.75rem 3.75rem 10px 10px;
+  text-align: center; line-height: 1;
+}
+.mojon__ruta { margin-top: 0.9rem; padding: 0.3rem 0.6rem; background: var(--tinta); color: var(--blanco); border-radius: 6px; font-size: 0.875rem; font-weight: 800; }
+.mojon__km { margin-top: 0.9rem; font-size: 0.875rem; font-weight: 700; color: var(--gris); }
+.mojon__numero { margin-top: 0.2rem; font-size: 1.625rem; font-weight: 900; letter-spacing: -0.04em; }
+
+.horarios { border-collapse: collapse; width: 100%; max-width: 28rem; }
+.horarios th, .horarios td { padding: 0.55rem 0; border-bottom: 1px solid #b8c7b0; font-variant-numeric: tabular-nums; }
+.horarios th { text-align: left; font-weight: 600; padding-right: 1.5rem; }
+.horarios td { text-align: right; font-weight: 800; }
+
+.estado { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.9rem; font-weight: 800; }
+.estado::before { content: ""; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: #a9b5ae; flex: none; }
+.estado[data-abierto="si"]::before { background: #5d9a2b; box-shadow: 0 0 0 4px rgba(93, 154, 43, 0.25); }
+
+.contacto li { padding-block: 0.3rem; }
+.contacto a { font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.25em; overflow-wrap: anywhere; }
+.contacto a:hover { text-decoration-color: #5d9a2b; }
+
+.presupuesto {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--blanco); border: var(--borde) solid var(--tinta); border-radius: calc(var(--radio) + 6px);
+}
+.presupuesto h2, .presupuesto > p, .presupuesto__acciones, .campo { grid-column: 1 / -1; }
+.presupuesto h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.presupuesto > p { color: var(--gris); }
+.campo--mitad { grid-column: span 1; }
+.campo label { display: block; margin-bottom: 0.3rem; font-size: 0.9375rem; font-weight: 800; }
+.campo input, .campo textarea {
+  width: 100%; min-height: 3.25rem; padding: 0.7rem 0.9rem;
+  background: var(--blanco); border: 2px solid var(--tinta); border-radius: 10px; font-weight: 600;
+}
+.campo input::placeholder { color: #8b9991; font-weight: 500; }
+.campo textarea { resize: vertical; }
+.presupuesto__acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+
+/* ---------- Pie ---------- */
+
+.pie { padding-block: 3rem; border-top: var(--borde) solid var(--tinta); }
+
+/* ---------- Mapa y WhatsApp flotante ---------- */
+
+.mapa { display: block; width: 100%; height: 22rem; border: 0; }
+
+.flotante {
+  position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 25;
+  display: flex; align-items: center; justify-content: center;
+  width: 3.75rem; height: 3.75rem; border-radius: 50%;
+  background: #25d366; color: #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  cursor: pointer; transition: transform 0.2s;
+}
+.flotante:hover { transform: scale(1.08); }
+.flotante svg { width: 2rem; height: 2rem; }
+@media (max-width: 40rem) { .flotante { display: none; } }
+.pie__fila { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.pie img { width: 175px; height: auto; }
+.pie p { font-weight: 700; }
+
+/* ---------- Barra de contacto en el teléfono ---------- */
+
+.barra-movil { display: none; }
+
+/* ---------- Pedido ---------- */
+
+.carrito {
+  width: min(100%, 30rem); max-width: none; height: 100dvh; max-height: none;
+  margin: 0 0 0 auto; padding: 0; border: 0; border-left: var(--borde) solid var(--tinta);
+  background: var(--blanco); color: var(--tinta);
+}
+.carrito::backdrop { background: rgba(28, 43, 37, 0.6); }
+.carrito[open] { animation: entrar 0.22s ease-out; }
+@keyframes entrar { from { transform: translateX(2rem); opacity: 0; } }
+.carrito__caja { display: flex; flex-direction: column; height: 100%; }
+.carrito__cabecera { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: var(--verde); }
+.carrito__cabecera h2 { font-size: 2rem; }
+.carrito__cabecera button { min-height: 2.75rem; padding: 0 0.75rem; background: none; border: 0; font-weight: 800; text-decoration: underline; cursor: pointer; }
+.carrito__vacio { padding: 2rem 1.5rem; color: var(--gris); }
+.carrito__lista { flex: 1; overflow-y: auto; padding-inline: 1.5rem; }
+.renglon { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.6rem 1rem; padding-block: 1rem; border-bottom: 1px solid #c9d3cc; }
+.renglon__texto { grid-column: 1 / -1; }
+.renglon__nombre { display: block; font-weight: 800; }
+.renglon__detalle { color: var(--gris); font-size: 0.9375rem; }
+.renglon__cantidad { display: inline-flex; align-items: center; border: 2px solid var(--tinta); border-radius: 10px; width: max-content; }
+.renglon__cantidad button { width: 2.75rem; height: 2.75rem; background: none; border: 0; font-size: 1.25rem; font-weight: 800; cursor: pointer; }
+.renglon__cantidad button:hover { background: var(--verde-claro); }
+.renglon__cantidad span { min-width: 2rem; text-align: center; font-weight: 800; font-variant-numeric: tabular-nums; }
+.renglon__importe { align-self: center; font-weight: 800; font-variant-numeric: tabular-nums; }
+.carrito__pie { padding: 1.25rem 1.5rem 1.5rem; border-top: var(--borde) solid var(--tinta); }
+.carrito__total { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.carrito__total strong { font-size: 1.625rem; font-weight: 900; letter-spacing: -0.03em; text-align: right; font-variant-numeric: tabular-nums; }
+.carrito__total small { display: block; margin-top: 0.2rem; font-size: 0.875rem; font-weight: 600; letter-spacing: 0; }
+.carrito__pie .boton { width: 100%; }
+.carrito__pie .nota { margin-top: 0.75rem; font-size: 0.875rem; }
+
+/* ---------- Pantallas chicas ---------- */
+
+@media (max-width: 60rem) {
+  .barra__nav { display: none; }
+  .barra__logo { margin-right: auto; }
+  .productos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .campo-seccion__grilla, .confianza__grilla, .contacto-seccion__grilla, .acordeon__cuerpo { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 40rem) {
+  body { padding-bottom: 4rem; font-size: 1.0625rem; }
+  .barra__logo img { width: 180px; }
+  .barra .boton { display: none; }
+  .portada__acciones, .portada__acciones .boton { width: 100%; }
+
+  .ruta__pueblos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ruta__medio { display: none; }
+  .ruta__tractor img { margin-left: calc(50% - 4rem); }
+
+  .marcas { gap: 0.1rem 1.1rem; }
+  .productos { grid-template-columns: minmax(0, 1fr); }
+  .ver-mas { width: 100%; }
+  .donde { grid-template-columns: minmax(0, 1fr); }
+  .presupuesto { grid-template-columns: minmax(0, 1fr); }
+  .campo--mitad { grid-column: 1 / -1; }
+  .presupuesto__acciones .boton { width: 100%; }
+
+  .barra-movil {
+    position: fixed; inset: auto 0 0 0; z-index: 30;
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr;
+    background: var(--tinta); color: var(--blanco);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .barra-movil a, .barra-movil button {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 3.5rem; background: none; border: 0; border-left: 1px solid #3a4d45;
+    color: inherit; font-size: 0.9375rem; font-weight: 800; text-decoration: none; cursor: pointer;
+  }
+  .barra-movil a:first-child { background: var(--verde); color: var(--tinta); border-left: 0; }
+  .barra-movil svg { width: 1.25rem; height: 1.25rem; }
+  .barra-movil span { min-width: 1.4rem; padding-inline: 0.3rem; border-radius: 1rem; background: var(--verde); color: var(--tinta); font-size: 0.8125rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ruta__tractor img, .carrito[open] { animation: none; }
+  .acordeon summary::after { transition: none; }
+}

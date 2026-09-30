@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto | Agrosuna</title>
+  <meta name="theme-color" content="#1C2B25">
+  <link rel="icon" href="../assets/marca/isotipo-verde.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../compartido/fuentes.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="producto">
+  <script src="../compartido/iconos.js"></script>
+  <header class="cabecera" id="cabecera"></header>
+
+  <main class="contenedor">
+    <nav class="migas" aria-label="Estás en">
+      <a href="index.html">Inicio</a>
+      <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      <a href="productos.html" data-miga-categoria>Productos</a>
+      <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      <span data-miga-producto></span>
+    </nav>
+
+    <p class="aviso-muestra" data-aviso-muestra hidden>Tienda de muestra: los productos, precios y fotos son ejemplos hasta cargar el catálogo real.</p>
+
+    <article class="ficha" data-ficha></article>
+
+    <section class="bloque">
+      <div class="bloque__titulo"><h2>También te puede servir</h2></div>
+      <ul class="productos" data-relacionados></ul>
+    </section>
+  </main>
+
+  <footer class="pie" id="pie"></footer>
+
+  <script src="../compartido/datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
