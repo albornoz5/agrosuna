@@ -31,8 +31,12 @@
     .version div { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
     .version h3 { font-size: 19px; font-weight: 700; }
     .version p { flex: 1; margin: 6px 0 16px; font-size: 15px; color: #5c6963; }
-    .version span { align-self: flex-start; padding: 9px 18px; background: #1c2b25; color: #fff; border-radius: 6px; font-size: 14.5px; font-weight: 600; }
-    .version:hover span { background: #86b05a; color: #1c2b25; }
+    .acciones { display: flex; flex-wrap: wrap; gap: 10px; }
+    .acciones a { padding: 10px 18px; border-radius: 6px; font-size: 14.5px; font-weight: 600; border: 2px solid #1c2b25; }
+    .ver { background: #1c2b25; color: #fff; }
+    .ver:hover { background: #2d443a; border-color: #2d443a; }
+    .elegir { color: #1c2b25; }
+    .elegir:hover { background: #97be6e; border-color: #97be6e; }
     footer { margin-top: 56px; padding: 24px 0; border-top: 1px solid #dde4da; font-size: 14px; color: #5c6963; }
     @media (prefers-reduced-motion: reduce) { .version { transition: none; } }
   </style>
@@ -43,6 +47,7 @@
       <img src="assets/marca/logo-secundario-verde.svg" alt="Agrosuna Servicios Agropecuarios" width="210" height="39">
       <h1>Propuestas para el sitio web</h1>
       <p>Cinco alternativas con el mismo contenido y los mismos datos de contacto. Se pueden recorrer completas, también desde el celular. Los productos, los precios y las fotos son de muestra.</p>
+      <p>Cuando se decidan, tocan <strong>Elegir esta</strong> en la propuesta que más les guste y me llega el aviso. También pueden mandarme comentarios de las otras.</p>
     </div>
   </header>
 
@@ -50,51 +55,66 @@
     <h2>Formatos clásicos</h2>
     <p>La estructura habitual de un sitio de empresa y de una tienda online.</p>
     <ul class="versiones">
-      <li><a class="version" href="v4/index.html">
-        <img src="assets/vistas/v4.webp" alt="" width="1280" height="800">
+      <li class="version">
+        <a href="v4/index.html" tabindex="-1" aria-hidden="true"><img src="assets/vistas/v4.webp" alt="" width="1280" height="800"></a>
         <div>
           <h3>Sitio institucional</h3>
           <p>Presenta la empresa, los servicios, las marcas y el contacto. Las consultas y los presupuestos llegan por WhatsApp o por correo.</p>
-          <span>Ver propuesta</span>
+          <div class="acciones">
+            <a class="ver" href="v4/index.html">Ver propuesta</a>
+            <a class="elegir" href="mailto:juancruzalbornoz5@gmail.com?subject=Elegimos%20la%20propuesta%3A%20Sitio%20institucional&body=Hola%20Juan%20Cruz%2C%20para%20el%20sitio%20de%20Agrosuna%20elegimos%20la%20propuesta%20%22Sitio%20institucional%22.%0A%0AComentarios%3A%20">Elegir esta</a>
+          </div>
         </div>
-      </a></li>
-      <li><a class="version" href="v5/index.html">
-        <img src="assets/vistas/v5.webp" alt="" width="1280" height="800">
+      </li>
+      <li class="version">
+        <a href="v5/index.html" tabindex="-1" aria-hidden="true"><img src="assets/vistas/v5.webp" alt="" width="1280" height="800"></a>
         <div>
           <h3>Tienda online</h3>
           <p>Catálogo por categorías con buscador, ficha de cada producto y carrito. El pedido se envía por WhatsApp para confirmar pago y entrega.</p>
-          <span>Ver propuesta</span>
+          <div class="acciones">
+            <a class="ver" href="v5/index.html">Ver propuesta</a>
+            <a class="elegir" href="mailto:juancruzalbornoz5@gmail.com?subject=Elegimos%20la%20propuesta%3A%20Tienda%20online&body=Hola%20Juan%20Cruz%2C%20para%20el%20sitio%20de%20Agrosuna%20elegimos%20la%20propuesta%20%22Tienda%20online%22.%0A%0AComentarios%3A%20">Elegir esta</a>
+          </div>
         </div>
-      </a></li>
+      </li>
     </ul>
 
     <h2>Con diseño propio</h2>
     <p>Tres alternativas de una sola página, cada una con un enfoque distinto.</p>
     <ul class="versiones">
-      <li><a class="version" href="v1/index.html">
-        <img src="assets/vistas/v1.webp" alt="" width="1280" height="800">
+      <li class="version">
+        <a href="v1/index.html" tabindex="-1" aria-hidden="true"><img src="assets/vistas/v1.webp" alt="" width="1280" height="800"></a>
         <div>
           <h3>Mostrador</h3>
           <p>Se entra buscando un repuesto o eligiendo la marca de la máquina. El catálogo funciona como una lista de precios con pedido por WhatsApp.</p>
-          <span>Ver propuesta</span>
+          <div class="acciones">
+            <a class="ver" href="v1/index.html">Ver propuesta</a>
+            <a class="elegir" href="mailto:juancruzalbornoz5@gmail.com?subject=Elegimos%20la%20propuesta%3A%20Mostrador&body=Hola%20Juan%20Cruz%2C%20para%20el%20sitio%20de%20Agrosuna%20elegimos%20la%20propuesta%20%22Mostrador%22.%0A%0AComentarios%3A%20">Elegir esta</a>
+          </div>
         </div>
-      </a></li>
-      <li><a class="version" href="v2/index.html">
-        <img src="assets/vistas/v2.webp" alt="" width="1280" height="800">
+      </li>
+      <li class="version">
+        <a href="v2/index.html" tabindex="-1" aria-hidden="true"><img src="assets/vistas/v2.webp" alt="" width="1280" height="800"></a>
         <div>
           <h3>El recorrido</h3>
           <p>Repite la recorrida que se le hace a cada cliente nuevo, sector por sector: repuestos, mecánica, tornería, hidráulica y fabricación.</p>
-          <span>Ver propuesta</span>
+          <div class="acciones">
+            <a class="ver" href="v2/index.html">Ver propuesta</a>
+            <a class="elegir" href="mailto:juancruzalbornoz5@gmail.com?subject=Elegimos%20la%20propuesta%3A%20El%20recorrido&body=Hola%20Juan%20Cruz%2C%20para%20el%20sitio%20de%20Agrosuna%20elegimos%20la%20propuesta%20%22El%20recorrido%22.%0A%0AComentarios%3A%20">Elegir esta</a>
+          </div>
         </div>
-      </a></li>
-      <li><a class="version" href="v3/index.html">
-        <img src="assets/vistas/v3.webp" alt="" width="1280" height="800">
+      </li>
+      <li class="version">
+        <a href="v3/index.html" tabindex="-1" aria-hidden="true"><img src="assets/vistas/v3.webp" alt="" width="1280" height="800"></a>
         <div>
           <h3>Ruta 86</h3>
           <p>Inspirada en la cartelería de ruta, con el verde de la marca y tipografía grande. Pone al frente la ubicación y el contacto.</p>
-          <span>Ver propuesta</span>
+          <div class="acciones">
+            <a class="ver" href="v3/index.html">Ver propuesta</a>
+            <a class="elegir" href="mailto:juancruzalbornoz5@gmail.com?subject=Elegimos%20la%20propuesta%3A%20Ruta%2086&body=Hola%20Juan%20Cruz%2C%20para%20el%20sitio%20de%20Agrosuna%20elegimos%20la%20propuesta%20%22Ruta%2086%22.%0A%0AComentarios%3A%20">Elegir esta</a>
+          </div>
         </div>
-      </a></li>
+      </li>
     </ul>
   </main>
 
